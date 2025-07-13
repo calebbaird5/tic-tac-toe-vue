@@ -1,20 +1,13 @@
-<script lang="ts">
+<script lang="ts" setup>
 import TicTacToeBoard from '@/components/TicTacToeBoard.vue'
+import type { Player } from '@/types/tic-tac-toe'
+import { ref } from 'vue'
+
+const currentPlayer = ref<Player>('X')
 </script>
 
 <template>
-  <div class="tic-tac-toe">
-    <h1>Tic Tac Toe</h1>
-    <TicTacToeBoard />
-  </div>
-</template>
+  <h1>Tic Tac Toe</h1>
 
-<style>
-@media (min-width: 1024px) {
-  .tic-tac-toe {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+  <TicTacToeBoard v-model:currentPlayer="currentPlayer" />
+</template>

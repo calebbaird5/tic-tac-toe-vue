@@ -14,8 +14,8 @@ function toggleTheme() {
     <v-main class="px-5">
       <v-app-bar :elevation="2" class="px-2">
         <v-tabs>
-          <v-tab to="/">Home</v-tab>
           <v-tab to="/tic-tac-toe">Tic Tac Toe</v-tab>
+          <v-tab to="/ultimate-tic-tac-toe">Ultimate Tic Tac Toe</v-tab>
         </v-tabs>
         <v-spacer />
         <v-btn @click="toggleTheme" icon="$mdiThemeLightDark" />
@@ -26,7 +26,13 @@ function toggleTheme() {
 </template>
 
 <style>
+:root {
+  --v-theme-on-surface: var(--v-theme-primary);
+}
 #app {
   padding: 0;
+}
+.v-main {
+  width: 100vw;
 }
 </style>

@@ -14,10 +14,13 @@ const cyan = '#2aa198'
 const green = '#859900'
 
 const sharedColors = {
+  primary: cyan,
+  secondary: violet,
   error: red,
   info: blue,
   success: green,
   warning: orange,
+  anchor: blue,
   yellow,
   orange,
   red,
@@ -33,9 +36,8 @@ const darkMode: ThemeDefinition = {
   colors: {
     background: '#002b36',
     surface: '#073642',
-    primary: '#586e75',
-    'primary-darken-1': '#657b83',
-    secondary: orange,
+    'on-background': '#839496',
+    'on-surface': '#93a1a1',
     ...sharedColors,
   },
 }
@@ -45,8 +47,9 @@ const lightMode: ThemeDefinition = {
   colors: {
     background: '#fdf6e3',
     surface: '#eee8d5',
-    primary: '#839496',
-    'primary-darken-1': '#93a1a1',
+    'on-background': '#657b83',
+    'on-surface': '#586e75',
+    ...sharedColors,
   },
 }
 
@@ -55,8 +58,25 @@ export const vuetify = createVuetify({
   directives,
   theme: {
     defaultTheme: 'darkMode',
+    variations: {
+      colors: [
+        'primary',
+        'secondary',
+        'yellow',
+        'orange',
+        'red',
+        'magenta',
+        'violet',
+        'blue',
+        'cyan',
+        'green',
+      ],
+      lighten: 1,
+      darken: 2,
+    },
     themes: { lightMode, darkMode },
   },
+
   icons: {
     defaultSet: 'mdi',
     aliases: { ...aliases, mdiThemeLightDark },
