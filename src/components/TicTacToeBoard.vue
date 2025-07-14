@@ -79,6 +79,7 @@ const handleSelectCell = (i: number) => {
       class="cell"
       :class="[cell ? 'set' : 'empty', winningCombo?.includes(i) && 'winning']"
       v-for="(cell, i) in board"
+      :key="i"
       @click="() => handleSelectCell(i)"
       :disabled="disabled"
     >

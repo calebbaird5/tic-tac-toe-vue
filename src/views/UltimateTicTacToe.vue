@@ -42,6 +42,7 @@ const handleSubGameOver = (winner: Player | 'Cat', i: number) => {
     <div
       class="cell"
       v-for="(cell, i) in board"
+      :key="i"
       :class="[
         currentBoardIndex !== null && i !== currentBoardIndex && 'disabled',
         winningCombo?.includes(i) && 'winning',
