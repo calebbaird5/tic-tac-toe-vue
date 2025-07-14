@@ -11,16 +11,20 @@ function toggleTheme() {
 
 <template>
   <v-app>
-    <v-main class="px-5">
+    <v-main>
       <v-app-bar :elevation="2" class="px-2">
-        <v-tabs>
-          <v-tab to="/tic-tac-toe">Tic Tac Toe</v-tab>
-          <v-tab to="/ultimate-tic-tac-toe">Ultimate Tic Tac Toe</v-tab>
-        </v-tabs>
-        <v-spacer />
-        <v-btn @click="toggleTheme" icon="$mdiThemeLightDark" />
+        <v-container class="d-flex align-center">
+          <v-tabs>
+            <v-tab to="/tic-tac-toe">Tic Tac Toe</v-tab>
+            <v-tab to="/ultimate-tic-tac-toe">Ultimate Tic Tac Toe</v-tab>
+          </v-tabs>
+          <v-spacer />
+          <v-btn @click="toggleTheme" icon="$mdiThemeLightDark" />
+        </v-container>
       </v-app-bar>
-      <RouterView />
+      <v-container>
+        <RouterView />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -31,8 +35,14 @@ function toggleTheme() {
 }
 #app {
   padding: 0;
+  width: 100dvw;
+  max-width: unset;
+  margin: 0;
+  box-sizing: border-box;
 }
-.v-main {
-  width: 100vw;
+
+.v-application {
+  max-width: unset;
+  width: 100dvw;
 }
 </style>
