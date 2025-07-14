@@ -31,7 +31,7 @@ jobs:
         run: bun install
 
       - name: Build project
-        run: VITE_BASE_URL=${{ steps.deployment.outputs.page_url }} bun run build
+        run: VITE_BASE_URL=/tic-tac-toe-vue/ bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
